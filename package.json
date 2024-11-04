@@ -1,0 +1,16 @@
+{
+  "name": "com.indie.search",
+  "version": "1.0.0",
+  "displayName": "Search",
+  "description": "`Search` is a utility class designed to help developers programmatically locate, reveal, and focus on assets and GameObjects within the Unity Editor. This class simplifies the process of finding specific objects or assets by name and allows users to quickly bring them into view in the appropriate Unity editor window (Hierarchy, Project, or Scene view). ",
+  "unity": "2023.2.20f1",
+  "author": {
+    "name": "danejw",
+    "email": "",
+    "url": "yourindie.dev"
+  },
+  "dependencies": {
+    "com.unity.modules.core": "1.0.0",
+    "com.unity.modules.editor": "1.0.0"
+  }
+}
