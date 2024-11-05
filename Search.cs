@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace Indie.Reveal
 {
-    public class Search
+    public static class Search
     {
         // Finds assets by name.
         public static string[] FindAssetsByName(string name)
