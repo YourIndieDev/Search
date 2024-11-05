@@ -22,7 +22,7 @@ namespace Indie.Reveal
         }
 
         // Method to reveal a GameObject in the Hierarchy
-        public static bool RevealGameObjectInHierarchy(string name)
+        public static GameObject RevealGameObjectInHierarchy(string name)
         {
             GameObject targetObject = GameObject.Find(name);
 
@@ -32,18 +32,18 @@ namespace Indie.Reveal
                 EditorGUIUtility.PingObject(targetObject);
                 Debug.Log("Revealed GameObject in Hierarchy: " + name);
 
-                return true;
+                return targetObject;
             }
             else
             {
                 Debug.LogWarning("GameObject not found in Hierarchy: " + name);
 
-                return false;
+                return null;
             }
         }
 
         // Method to reveal an asset in the Project view
-        public static bool RevealAssetInProject(string name)
+        public static string[] RevealAssetInProject(string name)
         {
             // Searches for assets in the Project by name
             string[] guids = AssetDatabase.FindAssets(name);
@@ -56,18 +56,18 @@ namespace Indie.Reveal
                 EditorGUIUtility.PingObject(asset);
                 Debug.Log("Revealed asset in Project view: " + assetPath);
 
-                return true;
+                return guids;
             }
             else
             {
                 Debug.LogWarning("Asset not found in Project view: " + name);
 
-                return false;
+                return null;
             }
         }
 
         // Method to frame a GameObject in the Scene view
-        public static bool FrameObjectInSceneView(string name)
+        public static GameObject FrameObjectInSceneView(string name)
         {
             GameObject targetObject = GameObject.Find(name);
 
@@ -80,13 +80,13 @@ namespace Indie.Reveal
                 SceneView.lastActiveSceneView.Frame(bounds);
                 Debug.Log("Framed GameObject in Scene view: " + name);
 
-                return true;
+                return targetObject;
             }
             else
             {
                 Debug.LogWarning("GameObject not found in Scene: " + name);
 
-                return false;
+                return null;
             }
         }
 
